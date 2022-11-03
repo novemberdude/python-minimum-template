@@ -1,0 +1,19 @@
+image: "python:3.6"
+
+before_script:
+  - python -V # Print out python version for debugging
+#  - pip install pytest==5.3.5
+  - pip install flake8==3.7.9
+#  - pip install mypy==0.761
+#  - pip install qcore
+  - pip install -r requirements.txt
+
+stages:
+  - flake8_mypy_pytest
+
+flake8_mypy_pytest:
+  stage: flake8_mypy_pytest
+  script:
+    - flake8 vix
+#    - mypy . --ignore-missing-imports
+#    - pytest anasoc_index/

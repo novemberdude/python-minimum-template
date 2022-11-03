@@ -1,0 +1,34 @@
+exclude: ^tests
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
+    hooks:
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: https://github.com/asottile/seed-isort-config
+    rev: v2.1.1
+    hooks:
+    -   id: seed-isort-config
+-   repo:  https://github.com/pycqa/isort
+    rev: 5.5.4
+    hooks:
+    -   id: isort
+        args: ["--profile", "black"]
+-   repo: https://github.com/psf/black
+    rev: 19.3b0
+    hooks:
+    -   id: black
+-   repo: https://gitlab.com/pycqa/flake8
+    rev: 3.8.3
+    hooks:
+    -   id: flake8
+        language: python
+        'types': [ python ]
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: 'v0.982'
+    hooks:
+    -   id: mypy
+        verbose: true
+        args: ["--ignore-missing-imports", "--show-error-codes"]
+        additional_dependencies: ['types-requests']

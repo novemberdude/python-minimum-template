@@ -1,0 +1,7 @@
+[flake8]
+max-line-length = 120
+exclude = .git,__pycache__,docs/source/conf.py,old,build,dist,.venv,src,venv,detect_similar_posts/sample_data.py, detect_similar_posts/consume_data.py
+application-import-names=anasoc_indexing
+import-order-style=google
+filename = *.py, ./anasoc_indexing/*.py
+extend-ignore = E203

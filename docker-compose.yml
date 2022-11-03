@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  python-template:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "python-template"
+    environment:
+     - IS_DEV_ENV=0
+    image: "hub.vnpt.vn/vnsocial-dev/python-template:1.0.0"
+    tty: True
+    volumes:
+     - "/etc/localtime:/etc/localtime:ro"
+     - "/etc/timezone:/etc/timezone:ro"
